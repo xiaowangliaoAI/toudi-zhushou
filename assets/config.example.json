@@ -1,0 +1,73 @@
+{
+  "_说明": "复制成 config.json 后逐项替换。带 <必须替换> 的项不改会跑错。不要把这个文件本身提交/分享时带上个人数据。",
+
+  "_1_简历": {
+    "resume_path": "<必须替换> 你的简历文件的绝对路径",
+    "material_library_path": "<建议替换> 素材库落盘路径，例如 ./素材库.md（由 AI 从简历拆解生成）",
+    "_说明": "素材库是个人数据，只放本地 workspace，不进 skill 包"
+  },
+
+  "_2_筛选口径": {
+    "keywords": ["<必须替换> 目标岗位关键词，例如 招聘专员", "<关键词2>"],
+    "city": "<必须替换> 目标城市（不要留空，留空会全国范围搜）",
+    "salary_min_k": 8,
+    "experience_max_years": 5,
+    "exclude_role_types": [
+      "招聘经理",
+      "人力资源经理",
+      "HRBP负责人",
+      "人力资源总监",
+      "招聘负责人",
+      "高级猎头顾问",
+      "供应商开发",
+      "销售招募",
+      "校招"
+    ],
+    "_说明": "exclude_role_types 是岗位实质层面的排除；硬门槛见 references/matching-rubric.md 第 0 步"
+  },
+
+  "_3_硬门槛（一票否决）": {
+    "language_required": false,
+    "cert_required": false,
+    "first_degree_211": false,
+    "age_limit": null,
+    "industry_years_required": null,
+    "_说明": "这些是「本人满足不了就不投」的条件；填 true/数字表示 JD 普遍要求而本人不满足时直接跳过"
+  },
+
+  "_4_驱动": {
+    "route": "A",
+    "_route_说明": "A=agent-browser CLI（推荐，跨平台、无坐标依赖）；B=系统级合成输入（兜底，需现场校准）",
+    "profile_dir": "<路线A必填> 独立 profile 目录，例如 ./chrome-profile",
+    "cdp_port": null,
+    "_cdp_说明": "⚠️ 实测 CDP 通道会触发安全验证，非必要不填",
+    "browser_window": {
+      "hint": "路线 B 需要浏览器窗口位置稳定；建议固定最大化后校准，不要中途拖动"
+    }
+  },
+
+  "_5_节流": {
+    "sample_size_first": 3,
+    "batch_size": 10,
+    "pause_between_actions_sec": 2,
+    "pause_between_batches_sec": 60,
+    "max_per_session": 50,
+    "stop_on_captcha": true
+  },
+
+  "_6_坐标（路线B专用，必须现场校准）": {
+    "screen_scale": "auto",
+    "_scale_说明": "macOS Retina 通常 2；Windows 100% 缩放通常 1。用 locate.py info 得到",
+    "coords": {
+      "_说明": "以下全部为占位，禁止照抄本机数值；用 locate.py button/cards 现场生成",
+      "chat_button": [0, 0],
+      "session_list_anchor": [0, 0]
+    }
+  },
+
+  "_7_输出": {
+    "output_dir": "./output",
+    "sent_list_filename": "已发清单.md",
+    "skipped_list_filename": "未发清单.md"
+  }
+}

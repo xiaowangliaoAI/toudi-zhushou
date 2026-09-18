@@ -1,0 +1,29 @@
+# ---- 个人数据：绝对不能提交 ----
+# 你自己的姓名 / 城市 / 学校 / 简历独有数字 / 投递过的公司名
+assets/pii_patterns.txt
+
+# 真实配置（含你自己的简历路径、城市、筛选口径）
+assets/config.json
+
+# 从简历拆出来的素材库（含真实姓名、电话、经历细节）
+素材库*.md
+*素材库*
+
+# 投递清单、会话记录（个人求职数据）
+*清单*.md
+output/
+logs/
+
+# 截图（可能拍到你的账号信息、聊天记录、简历内容）
+*.png
+*.jpg
+*.jpeg
+screenshots/
+
+# ---- 环境噪音 ----
+__pycache__/
+*.pyc
+.venv/
+venv/
+.DS_Store
+Thumbs.db
